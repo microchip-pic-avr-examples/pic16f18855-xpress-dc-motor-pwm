@@ -6,6 +6,8 @@
 ## Objective:
 Use the MPLAB® Xpress Evaluation Board and MCC to read the onboard potentiometer using the ADCC and generate a PWM signal to drive a DC motor in both directions.
 
+</br></br>
+
 <img src="images/dc-motor.jpg" alt="Hardware Setup"/>
 
 ## Resources:
