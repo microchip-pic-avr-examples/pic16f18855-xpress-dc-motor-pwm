@@ -16,12 +16,61 @@ Use the MPLAB® Xpress Evaluation Board and MCC to read the onboard potentiomete
 - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
 - MPLAB® Xpress Evaluation Board [(DM164140)](https://www.microchip.com/Developmenttools/ProductDetails/PartNo/DM164140)
 - DC Motor 2 Click [(dc-motor-2-click)](https://www.mikroe.com/dc-motor-2-click)
+- DC Motor
+- Power supply for the DC motor
 
-## Hardware Configuration:
+## Description:
 
-- ADCC to read the potentiometer
-- TMR2 is used as clock source for the PWM signal
-- PWM6 is used to generate signal for the motor
+- Xpress board (with PIC16F18855) is used as it has got Drag-and-Drop Programming.
+- A PWM peripheral of the PIC MCU is used for generating the PWM signal for the motor.
+- The onboard potentiometer is used to adjust the duty cycle of the PWM, and the direction of rotation.
+- The potentiometer is read using the ADCC set in Low Pass Filter mode, in order to reduce the noise.
+- DC MOTOR 2 Click board from MikroElektronika™ is used for driving the motor in both directions.
+
+## MCC Settings:
+
+### System Module Settings:
+- Oscillator Select: HFINTOSC
+- HF Internal Clock: 32_MHz
+- Clock Divider: 1
+- Watchdog Timer Enable: WDT Disabled, SWDTEN is ignored
+
+### ADCC Settings:
+#### Easy Setup:
+- Enable ACD : checked
+- Operating: Low_pass_filter_mode
+- Clock Source: FOSC/ADCLK
+- Clock: FOSC/32
+
+#### Registers:
+- ADRPT: 0x8
+- ADCON2: 0x34
+    - ADACLR: disabled
+    - ADCRS: 0x3
+    - ADMD: Low_pass_filtermode
+    - ADPSIS: ADRES
+
+### TMR2 Settings:
+- Enable Timer: checked
+- Clock Source: FOSC/4
+- Postscaler: 1:1
+- Prescaler: 1:1
+- Polarity: Rising Edge
+
+### PWM6 Settings:
+- Enable PWM: checked
+- Select a Timer: Timer2
+- Duty Cycle: 0.0%
+- PWM Polarity: active_hi
+
+### Pin Manager Settings:
+The pins are configured as follows:
+
+- ADCC input on RA4, named channel_ANA4
+- PWM6 output on RC7
+- GPIO output on RB1, named MOTOR_IN2
+- GPIO output on RB2, named MOTOR_IN1
+- GPIO output on RC2, named nSLP, configured to Start High.
 
 ## Demo:
 

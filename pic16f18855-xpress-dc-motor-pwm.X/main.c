@@ -23,10 +23,10 @@
 
 #include "mcc_generated_files/mcc.h"
 
-#define ADC_10BIT_MIDDLE 512
-#define AMPLIFICATION_K 2
-#define PWM_DUTY_MIN 0
-#define PWM_DUTY_MAX 1023
+#define ADC_10BIT_MIDDLE    512
+#define AMPLIFICATION_K     2
+#define PWM_DUTY_MIN        0
+#define PWM_DUTY_MAX        1023
 
 /*
                          Main application
