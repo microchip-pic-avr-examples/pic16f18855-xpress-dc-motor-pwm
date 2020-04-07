@@ -29,41 +29,51 @@ Use the MPLAB® Xpress Evaluation Board and MCC to read the onboard potentiomete
 
 ## MCC Settings:
 
+This section shows the settings used in the demo/example for various MCU modules configuration. These settings were done using the Microchip Code Configurator (MCC). Open MCC to look at the settings of the modules.
+
 ### System Module Settings:
-- Oscillator Select: HFINTOSC
-- HF Internal Clock: 32_MHz
-- Clock Divider: 1
-- Watchdog Timer Enable: WDT Disabled, SWDTEN is ignored
+
+The MCU uses the high frequency internal oscillator (HFINTOSC), and the clock is set to 32 MHz. Watchdog Timer is not used in this demo, so it is disabled.
+
+<br>
+<img src="images/system_module.jpg" width=500/>
+<br>
 
 ### ADCC Settings:
-#### Easy Setup:
-- Enable ACD : checked
-- Operating: Low_pass_filter_mode
-- Clock Source: FOSC/ADCLK
-- Clock: FOSC/32
 
-#### Registers:
-- ADRPT: 0x8
-- ADCON2: 0x34
-    - ADACLR: disabled
-    - ADCRS: 0x3
-    - ADMD: Low_pass_filtermode
-    - ADPSIS: ADRES
+ADCC is used to read the potentiometer. It is configured to operate in Low pass filter mode, with a clock of Fosc/32.
+
+<br>
+<img src="images/adcc.jpg" width=500/>
+<br>
+
+For the Low pass filter mode, there are 2 more settings that must be configured from the Registers view. They are ADRPT and ADCRS.
+
+<br>
+<img src="images/adrpt.jpg" alt="Hardware Setup"/>
+<br>
+<img src="images/adcon2.jpg" alt="Hardware Setup"/>
+<br>
+
+With these settings, the filtering will use 8 ADC samples.
 
 ### TMR2 Settings:
-- Enable Timer: checked
-- Clock Source: FOSC/4
-- Postscaler: 1:1
-- Prescaler: 1:1
-- Polarity: Rising Edge
+
+The TMR2 is used as a clock source for the PWM signal.
+
+<br>
+<img src="images/tmr2.jpg"/>
 
 ### PWM6 Settings:
-- Enable PWM: checked
-- Select a Timer: Timer2
-- Duty Cycle: 0.0%
-- PWM Polarity: active_hi
+
+The PWM6 is used to generate the PWM signal for the motor. It uses the TMR2 as clock source. The duty cycle is updated at runtime according to the value read from the potentiometer.
+
+<br>
+
+<img src="images/pwm6.jpg" alt="Hardware Setup"/>
 
 ### Pin Manager Settings:
+
 The pins are configured as follows:
 
 - ADCC input on RA4, named channel_ANA4
@@ -71,6 +81,11 @@ The pins are configured as follows:
 - GPIO output on RB1, named MOTOR_IN2
 - GPIO output on RB2, named MOTOR_IN1
 - GPIO output on RC2, named nSLP, configured to Start High.
+
+<br>
+<img src="images/grid.jpg" alt="Hardware Setup"/>
+<br>
+<img src="images/pin.jpg" alt="Hardware Setup"/>
 
 ## Demo:
 
