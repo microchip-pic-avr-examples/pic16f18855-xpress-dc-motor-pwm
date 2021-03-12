@@ -3,28 +3,28 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.mplabx.project.",
-        "version": " ",
-        "displayName": "  ",
-        "projectName": "",
-        "shortDescription": "",
+        "name": "com.microchip.mcu8.mplabx.project.pic16f18855-xpress-dc-motor-pwm",
+        "version": "1.0.2",
+        "displayName": "Control DC motor using DC Motor 2 Click",
+        "projectName": "pic16f18855-xpress-dc-motor-pwm",
+        "shortDescription": "Use the MPLAB® Xpress Evaluation Board and MCC to read the onboard potentiometer using the ADCC and generate a PWM signal to drive a DC motor in both directions.",
         "ide": {
-            "name": "",
-            "semverRange": ""
+            "name": "MPLAB X",
+            "semverRange": ">=5.30.0"
         },
         "compiler": [
 			{
-				"name": "",
-				"semverRange": ""
+				"name": "XC8",
+				"semverRange": "^2.10.0"
 			}
 		],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC16F1xxxx_DFP",
+            "semverRange": "^1.2.99"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=3.95.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -32,26 +32,21 @@
             "content": {
                 "metaDataVersion": "1.0.0",
                 "category": "com.microchip.device",
-                "name": "",
+                "name": "PIC16F18855",
                 "versionRange": "*"
             }
         },
-        "author": "",
+        "author": "Microchip",
         "subcategories": [
-            "",
             [
-               "Peripherals", ""
-            ],
-            [
-               "Peripherals", ""
-            ]            			
+               "Peripherals", "ADCC"
+            ]
         ],
         "peripherals": [
-            "",""
+            "ADCC"
         ],
         "keywords": [
-            "",
-            ""			
+		        "DC motor", "DC motor 2 Click"
         ],
 		"additionalData": {
 			"longDescription": {
