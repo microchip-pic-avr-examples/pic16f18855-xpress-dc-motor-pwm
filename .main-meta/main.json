@@ -5,7 +5,7 @@
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic16f18855-xpress-dc-motor-pwm",
         "version": "1.0.2",
-        "displayName": "Control DC motor using DC Motor 2 Click",
+        "displayName": "DC Motor Control using DC Motor 2 Click",
         "projectName": "pic16f18855-xpress-dc-motor-pwm",
         "shortDescription": "Use the MPLAB® Xpress Evaluation Board and MCC to read the onboard potentiometer using the ADCC and generate a PWM signal to drive a DC motor in both directions.",
         "ide": {
@@ -39,14 +39,15 @@
         "author": "Microchip",
         "subcategories": [
             [
-               "Peripherals", "ADCC"
+               "Peripherals",
+			   "ADCC"
             ]
         ],
         "peripherals": [
             "ADCC"
         ],
         "keywords": [
-		        "DC motor", "DC motor 2 Click"
+		        "DC Motor Control"
         ],
 		"additionalData": {
 			"longDescription": {

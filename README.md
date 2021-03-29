@@ -1,34 +1,37 @@
-<div id="readme" class="Box-body readme blob js-code-block-container">
- <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><p><a href="https://www.microchip.com" rel="nofollow"><img src="images/MicrochipLogo.png" alt="MCHP" style="max-width:100%;"></a></p>
+[![MCHP](images/microchip.png)](https://www.microchip.com)
 
-# Control DC motor using DC Motor 2 Click
+# DC Motor Control using DC Motor 2 Click™
 
-## Objective:
 Use the MPLAB® Xpress Evaluation Board and MCC to read the onboard potentiometer using the ADCC and generate a PWM signal to drive a DC motor in both directions.
 
-</br></br>
-
-<img src="images/dc-motor.jpg" alt="Hardware Setup"/>
-
-## Resources:
+## Software Used
 - MPLAB® X IDE 5.30 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
 - MPLAB® XC8 2.10 or newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
 - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
 - MPLAB® Code Configurator PIC10/PIC12/PIC16/PIC18 library v1.79.0 [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+- PIC16F1xxxx DFP 1.2.99 or newer Device Pack
+
+## Hardware Used
 - MPLAB® Xpress Evaluation Board [(DM164140)](https://www.microchip.com/Developmenttools/ProductDetails/PartNo/DM164140)
 - DC Motor 2 Click [(dc-motor-2-click)](https://www.mikroe.com/dc-motor-2-click)
-- DC Motor
+- Generic DC Motor
 - Power supply for the DC motor
 
-## Description:
+## Setup
 
 - Xpress board (with PIC16F18855) is used as it has got Drag-and-Drop Programming.
 - A PWM peripheral of the PIC MCU is used for generating the PWM signal for the motor.
 - The onboard potentiometer is used to adjust the duty cycle of the PWM, and the direction of rotation.
 - The potentiometer is read using the ADCC set in Low Pass Filter mode, in order to reduce the noise.
-- DC MOTOR 2 Click board from MikroElektronika™ is used for driving the motor in both directions.
+- DC MOTOR 2 Click board™ from MikroElektronika™ is used for driving the motor in both directions.
 
-## MCC Settings:
+- Connect the DC motor to the motor pins of the DC Motor 2 Click Board
+- Connect the DC Power Supply to the PGND and VIN pins of the DC Motor 2 Click Board
+- Plug the DC Motor 2 ClickBoard into the mikroBUS socket on the MPLAB® Xpress Evaluation Board
+- Move the potentiometer to its middle position
+
+
+### MCC Settings:
 
 This section shows the settings used in the demo/example for various MCU modules configuration. These settings were done using the Microchip Code Configurator (MCC). Open MCC to look at the settings of the modules.
 
@@ -89,14 +92,9 @@ The pins are configured as follows:
 <img src="images/pin.jpg" alt="Hardware Setup"/>
 
 ## Demo:
-
-### Setup:
-- Connect the DC motor to the motor pins of the DC Motor 2 ClickBoard
-- Connect the DC Power Supply to the PGND and VIN pins of the DC Motor 2 ClickBoard
-- Plug the DC Motor 2 ClickBoard into the mikroBUS socket on the MPLAB® Xpress Evaluation Board
-- Move the potentiometer to its middle position
-
-### Operation:
-- After making the above hardware connections, connect the Xpress board to PC using the USB cable.
-- Build demo firmware and load the generated hex file onto the PIC16F18855 MCU.
+</br></br>
 - Rotate the potentiometer to adjust the DC motor speed and direction
+
+<img src="images/dc-motor.jpg" alt="Hardware Setup"/>
+
+
